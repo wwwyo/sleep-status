@@ -1,0 +1,14 @@
+.build/
+build/
+.swiftpm/
+.DS_Store
+.env
+.env.local
+*.local.*
+*.log
+*.jsonl
+.codex/langfuse.json
+.claude/settings.local.json
+.pi/settings.json
+.pi/npm/
+!orca.yaml

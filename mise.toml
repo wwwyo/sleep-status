@@ -1,0 +1,13 @@
+[tasks.build]
+description = "Build the local macOS app"
+run = "bash scripts/build.sh"
+
+[tasks.check]
+description = "Build and validate the app bundle"
+depends = ["build"]
+run = "bash scripts/check.sh"
+
+[tasks.install]
+description = "Install in ~/Applications and start the monitor"
+depends = ["check"]
+run = "bash scripts/install.sh"
