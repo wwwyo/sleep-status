@@ -21,7 +21,7 @@ pf_unset() { "${PF[@]}" config unset "$1"     --repo "$REPO" --yes; }
 
 pf_set enabled 'true'
 pf_set model 'opencode-go/muse-spark-1.3-contributor'
-pf_set effort '0.75' # high on Pullfrog's normalized 0..1 scale
+pf_set effort '0.5' # Pullfrog's `high` alias; resolved on the model's own ladder
 pf_set progress-comments 'true'
 pf_set oss 'true'
 pf_set push 'enabled'
