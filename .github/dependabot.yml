@@ -9,6 +9,7 @@ updates:
     exclude-paths:
       # Pullfrog owns this workflow and delivers its action updates.
       - .github/workflows/pullfrog.yml
+  # No Swift dependencies today; keep the policy ready for future additions.
   - package-ecosystem: swift
     directory: /
     schedule:

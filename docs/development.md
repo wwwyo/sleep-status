@@ -29,3 +29,5 @@ Langfuse collection is a personal opt-in: `.codex/langfuse.json`, `.claude/setti
 Orca setup copies existing local opt-ins from the main checkout using the optional dotfiles helper in `orca.yaml`. On a different machine, install the agent plugins and create your own opt-ins; the helper does not create credentials. Start Codex at the repo root. Confirm setup has copied the files before relying on recording.
 
 Apply or audit Pullfrog settings with `.github/pullfrog.config.sh` and `mise exec -- pullfrog config list --repo wwwyo/sleep-status`. The script keeps repository instructions unset to inherit organization policy. It enables draft reviews and re-reviews, without automatic merging. Keep `.github/workflows/pullfrog.yml` in the form supplied by Pullfrog.
+
+Pullfrog stores effort on a normalized scale. A raw provider model may run without applying this setting; check the workflow log before claiming a particular effort level. The initial review used the configured Muse Spark model, but reported that effort was not applied because it was not a recognized alias.
