@@ -21,3 +21,13 @@ Each record includes the timestamp (UTC), `SleepDisabled`, lid state, power sour
 The monitor can reveal when the OS setting changes or Amphetamine restarts. It does not identify which process changed the setting, and minute-long sampling can miss shorter changes. `SleepDisabled = 0` does not prove that the machine will sleep: other sleep assertions and external-display conditions also matter.
 
 To verify the installed app, compare its status with `pmset -g` and inspect the newest observation. While awake and without manual refresh, successive periodic probes should be approximately 60 seconds apart; launch, wake and manual refresh can add extra probes. GUI visibility requires a separate visual check; bundle validation alone does not verify the menu's appearance.
+
+## Agent session records and PR reviews
+
+Langfuse collection is a personal opt-in: `.codex/langfuse.json`, `.claude/settings.local.json`, `.pi/settings.json` with its local installation, and `mise.local.toml` remain ignored. This records development agent sessions, not the menu-bar app's observations. The app has no telemetry upload code.
+
+Orca setup copies existing local opt-ins from the main checkout using the optional dotfiles helper in `orca.yaml`. On a different machine, install the agent plugins and create your own opt-ins; the helper does not create credentials. Start Codex at the repo root. Confirm setup has copied the files before relying on recording.
+
+Apply or audit Pullfrog settings with `.github/pullfrog.config.sh` and `mise exec -- pullfrog config list --repo wwwyo/sleep-status`. The script keeps repository instructions unset to inherit organization policy. It enables draft reviews and re-reviews, without automatic merging. Keep `.github/workflows/pullfrog.yml` in the form supplied by Pullfrog.
+
+Pullfrog stores effort on a normalized scale. A raw provider model may run without applying this setting; check the workflow log before claiming a particular effort level. The initial review used the configured Muse Spark model, but reported that effort was not applied because it was not a recognized alias.
