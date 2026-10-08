@@ -4,6 +4,10 @@
 
 See whether macOS has actually disabled system sleep before leaving an agent or another long job running. Sleep Status reads the OS setting and shows it in the menu bar, even if a keep-awake app reports a different state.
 
+<img src="docs/assets/menu-preview.png" alt="Sleep Status with its menu open" width="560">
+
+*Recreated menu preview.*
+
 - 🟢 **スリープ無効** — system sleep is disabled (`SleepDisabled = 1`).
 - ⚪ **防止OFF** — this setting is off; other apps or normal clamshell conditions may still keep the Mac awake.
 - ❓ **確認失敗** — the OS setting could not be read.
